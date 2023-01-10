@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const { connection, connect } = require('mongoose');
 
-mongoose.connect(
-    process.env.MONGODB_URL || 'database_URL', 
+connect(
+    process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/Cyber_Store', 
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -9,4 +9,6 @@ mongoose.connect(
 );
 
 
-module.exports = mongoose.connect;
+module.exports = connection;
+
+// Minh
