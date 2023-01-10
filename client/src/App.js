@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { Footer, Header, Home, Nav, Pay, Post, User } from './components';
+
 function App() {
   return (
     <div className="App">
