@@ -1,84 +1,45 @@
-import React from "react";
+// import React, { useState } from 'react';
+// import PostForm from './PostForm';
 
-export default function Post(){
-    //I will fix it up later :) JL
-    // const inputFormatting = "";
-    // const inputFormattingArea ="";
+// function Post(props) {
+//   const [edit, setEdit] = useState({
+//     id: null,
+//     value: '',
+//     eagerness: '',
+//   });
 
-    // const [errorState, setErrorState] = useState(null);
-    // const [formValues, setFormValues] = useState({
-    //     name: null,
-    //     email: null,
-    //     message: null,
-    // });
+//   console.log(props.post);
 
-    // useEffect(() => {
-    //     // console.log('event:',event)
-    //     // If all fields are good, update state
-    //     if (errorState !== null) {
-    //     alert(errorState);
-    //     }
-    // }, [errorState, formValues]);
+//   const submitUpdate = (value) => {
+//     props.editPostItem(edit.id, value);
+//     setEdit({ id: null, value: '', eagerness: '' });
+//   };
 
-    // function formValidation(event){
-    //     console.log("formValidation called...");
-    //     console.log(event);
-    //     console.log("pre-switch error state:", errorState);
-    //     // Update error state based on all field values
-    //     switch (event.target.name) {
-    //     case "email":
-    //         console.log("triggered email validation");
-    //         emailValidation(event.target.value)
-    //         ? setErrorState(null)
-    //         : setErrorState("Invalid email");
-    //         break;
-    //     case "name":
-    //         event.target.value.length > 0
-    //         ? setErrorState(null)
-    //         : setErrorState("Name is a required field");
-    //         break;
-    //     case "message":
-    //         event.target.value.length > 0
-    //         ? setErrorState(null)
-    //         : setErrorState("Message is a required field");
-    //         break;
-    //     default:
-    //         setErrorState("You managed to break this form in a really unusual way");
-    //     }
-    //     console.log("post-switch error state:", errorState);
+//   if (edit.id) {
+//     return <PostForm edit={edit} onSubmit={submitUpdate} />;
+//   }
 
-    //     setFormValues({
-    //     // Preserve exising form values
-    //     ...formValues,
-    //     // Use this syntax to set a variable key value, overwriting old data
-    //     [event.target.name]: event.target.value,
-    //     });
-    // }
-    
-    // function submitForm(event){
-    //     event.preventDefault();
-    //     formValidation(event);
-    //     if(errorState !== null){
-    //         console.log("Error: Form content invalid");
-    //     }
-    //     else{
-    //         window.open(
-    //             ``
-    //         );
-    //     }
-    // }
+//   return props.post.map((item, i) => (
+//     <div
+//       className={
+//         item.isComplete
+//           ? `post-row complete ${item.eagerness}`
+//           : `post-row ${item.eagerness}`
+//       }
+//       key={i}
+//     >
+//       <div key={item.id} onClick={() => props.completePostItem(item.id)}>
+//         {item.text}
+//       </div>
+//       <div className="icons">
+//         {console.log(item)}
+//         <p onClick={() => setEdit({ id: item.id, value: item.text, eagerness: item.eagerness })}> ✏️</p>
+//         <p onClick={() => props.removePostItem(item.id)}> 🗑️</p>
+//       </div>
+//     </div>
+//   ));
+// }
 
-    return(
-        <div className="">
-            <section id="post" className="">
-                {/* <form className="" onSubmit={submitForm}>
-                    <input type="text" name="" placeholder="" className=""></input>
-                    <input type="text" name="" placeholder="" className=""></input>
-                    <input type="text" name="" placeholder="" className=""></input>
-                    <button type="submit" className="" >Submit</button>
-                </form> */}
-            </section>
-        </div>
-    );
-}
-//working on it (JL) feel free to add on
+// export default Post;
+
+//testing JL

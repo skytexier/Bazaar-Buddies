@@ -36,3 +36,131 @@
     transform: rotate(360deg);
   }
 }
+
+
+/************ Default Css ************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #121212 !important;
+  color: #fff !important;
+  font-family: 'Centra', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+p, a, li, button, ul {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+@media (min-width:1700px) {
+	main .container {
+		max-width: 100%;
+		padding: 0 150px;
+	}
+}
+
+p.success {
+	color: green;
+}
+
+p.danger {
+	color: red;
+}
+
+.footer {
+  font-size: 15px;
+  justify-content: center;
+}
+
+
+/* Product */
+.productCard {
+  font-size: 50px;
+}
+
+.productText {
+  color: #B8B8B8;
+  font-size: 228px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+}
+
+.project {
+  padding: 25px 0;
+  position: relative;
+}
+
+.project a {
+  font-size: 30px;
+  color:#121212;
+  opacity: .5;
+  margin: 10px 20px;
+  transition: all .3s ease-in-out;
+}
+
+.project a:hover {
+  opacity: 10;
+  color:#529dff;
+}
+
+.project h2 {
+	font-size: 45px;
+	font-weight: 700;
+  text-align: center;
+  margin: 10px;
+  letter-spacing: 0.8px;
+}
+.project p {
+  color: #b8b8b800;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px auto 30px auto;
+  text-align: center;
+  width: 56%;
+}
+/*  */
+.iconBorder {
+  size: 100px;
+  border-color: white;
+  border-style: solid;
+  border-radius: 100px;
+}
