@@ -15,14 +15,17 @@ export default function Splash(){
                 price: 1,
                 category: "Fruit"
             },
+            {
+                name: "Oranges",
+                price: 2,
+                category: "Fruit"
+            },
         ];
 
     return (
         <section className="project" id="projects">
-            <Container>
-                <Row>
                     <Col size={6}>
-                        <h2>Products</h2>
+                        <h2>{items[1].category}</h2>
                             <Row>
                                 {
                                     items.map((item, index) => {
@@ -36,8 +39,6 @@ export default function Splash(){
                                 }
                         </Row>
                     </Col>
-                </Row>
-            </Container>
             </section>
         )
     }

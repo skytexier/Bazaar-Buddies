@@ -1,0 +1,25 @@
+.header{
+    display: flex;
+    padding: auto;
+    margin: auto;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header__search{
+    display: flex;
+    flex: 1;
+}
+.header__searchInput{
+    height: 12px;
+    padding: 10px;
+    border: none;
+    width: 100%;
+}
+.header__option{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
