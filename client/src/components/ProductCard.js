@@ -1,12 +1,13 @@
-import {Col, Row} from 'react-bootstrap'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 export const ProductCard = ({ name, price, category}) => {
     return (
-        <Col size={12} sm={6} md={4}>
+        <Col sm={2} md={4}>
             <div className='productCard'>
                 <h4>{name}</h4>
-                <span className='producText'>${price}</span>
+                <span className='productText'>${price}</span>
                 <br></br>
                 <span>{category}</span>
             </div>

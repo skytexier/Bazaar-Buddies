@@ -1,3 +1,19 @@
+/* div.container{
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+} */
+
+span {
+margin: 0;
+}
+
+
+.row {
+  max-width: 100%;
+}
+
 .App {
   text-align: center;
 }
@@ -114,11 +130,14 @@ p.danger {
 /* Product */
 .productCard {
   font-size: 50px;
+  border-radius: 15px;
+  background: linear-gradient(rgb(96, 144, 248) -5.91%, rgb(255, 97, 221) 111.58%);
+  max-width: 200px;
 }
 
 .productText {
   color: #B8B8B8;
-  font-size: 228px;
+  font-size: 50px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
 }
@@ -126,6 +145,8 @@ p.danger {
 .project {
   padding: 25px 0;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .project a {
@@ -158,9 +179,3 @@ p.danger {
   width: 56%;
 }
 /*  */
-.iconBorder {
-  size: 100px;
-  border-color: white;
-  border-style: solid;
-  border-radius: 100px;
-}
