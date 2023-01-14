@@ -47,7 +47,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding-left: 2.75em;
     border-radius: 4px;
   }
   
@@ -71,18 +71,10 @@
   }
   
   span {
-    margin-left: 16px;
+    padding-left: 1em;
   }
   
-  .logo-section {
-    border-color:  white;
-    border: solid;
-  }
-
-  .logo-icon {
-    font-size: 2em;
-  }
-
-  .logo-text {
-    font-size: 1em;
+  .logo-section img {
+    width: 50%;
+    height: auto;
   }

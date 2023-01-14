@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "./components/Header.js";
-import Footer from "./components/Footer.js";
+import Header from "./components/Header/Header.js";
+import Footer from "./components/Footer/Footer.js";
 import Page from "./components/Page.js";
-import Navbar from "./components/Navbar.js";
-import SidebarData from "./components/SidebarData.js"
+import Navbar from "./components/Navbar/Navbar.js";
+import SidebarData from "./components/Navbar/SidebarData.js"
 import { BrowserRouter, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Container, Col, Row } from "react-bootstrap";
 // import Footer from "./components/Footer/index";
