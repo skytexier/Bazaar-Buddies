@@ -7,13 +7,13 @@ import "./Navbar.css";
  
 export default function Navbar() {
     
-    const [sidebar ] = useState(true);
+    const [sidebar, setSideBar] = useState(true);
 
 return (
     <Col lg={2}>
         <nav className = {sidebar ? "nav-menu active" : "nav-menu"}>
             <ul className = "nav-menu-items">
-            <Link to= "../../pages/Home"className = "logo-section">
+            <Link to= "/home"className = "logo-section">
             <img src={require("../../assets/BazaarBuddies.png")}  />
             </Link>
                 {SidebarData.map((item, index) => {
