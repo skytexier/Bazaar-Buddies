@@ -1,25 +1,42 @@
-.header{
-    display: flex;
-    padding: auto;
-    margin: auto;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+.header {
+    background-color: #1d202f;
+    height: 100px;
 }
+
 .header__search{
-    display: flex;
-    flex: 1;
+
 }
 .header__searchInput{
-    height: 12px;
-    padding: 10px;
-    border: none;
-    width: 100%;
 }
 .header__option{
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
+
 }
+
+.header .col {
+    max-height: 100px;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  
+
+.header .icon {
+    width: 125px;
+    object-fit: contain;
+    overflow: hidden;
+    background: linear-gradient(var(--rotate), rgb(255, 104, 104) -5.91%, rgb(255, 217, 4) 111.58%);
+    animation: spin 5s ease infinite;
+}
+

@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 
 export const ProductCard = ({ name, price, category}) => {
     return (
-        <Col sm={2} md={4}>
+        <Col className='col-auto'>
             <div className='productCard'>
                 <h4>{name}</h4>
                 <span className='productText'>${price}</span>

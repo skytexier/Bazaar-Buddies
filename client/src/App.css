@@ -1,12 +1,11 @@
-/* div.container{
+div.container{
   width: 100%;
   margin-left: 0;
-  margin-right: 0;
-  padding: 0;
-} */
+}
 
 span {
 margin: 0;
+padding-left: 0;
 }
 
 
@@ -131,8 +130,12 @@ p.danger {
 .productCard {
   font-size: 50px;
   border-radius: 15px;
+  border-color: #121212;
   background: linear-gradient(rgb(96, 144, 248) -5.91%, rgb(255, 97, 221) 111.58%);
-  max-width: 200px;
+  max-width: 450px;
+  min-width: 300px;
+  height: 300px;
+  margin: 15px;
 }
 
 .productText {
@@ -142,14 +145,12 @@ p.danger {
   line-height: 1.5em;
 }
 
-.project {
-  padding: 25px 0;
-  position: relative;
-  display: flex;
-  justify-content: center;
+.products {
+  background-color: #282c34;
+  border-radius: 100px;
 }
 
-.project a {
+.products a {
   font-size: 30px;
   color:#121212;
   opacity: .5;
@@ -157,19 +158,19 @@ p.danger {
   transition: all .3s ease-in-out;
 }
 
-.project a:hover {
+.products a:hover {
   opacity: 10;
   color:#529dff;
 }
 
-.project h2 {
+.products h2 {
 	font-size: 45px;
 	font-weight: 700;
   text-align: center;
   margin: 10px;
   letter-spacing: 0.8px;
 }
-.project p {
+.products p {
   color: #b8b8b800;
   font-size: 18px;
   letter-spacing: 0.8px;
@@ -178,4 +179,8 @@ p.danger {
   text-align: center;
   width: 56%;
 }
-/*  */
+/* Footer */
+
+footer {
+  height: 100px;
+}

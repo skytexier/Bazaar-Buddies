@@ -12,6 +12,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home'
 
+
 function App() {
   // const [pages] = useState(["item", "pay", "post"]);
   // const [currentPage, setCurrentPage] = useState(pages[0]);
@@ -27,9 +28,12 @@ function App() {
     // </>
     <div className="App">
       {/* <Navbar/> */}
-      <Row fluid={true} className="p-0">
       <BrowserRouter>
-        <Navbar />
+      <Header/>
+      <Container fluid>
+        <Row>
+        <Navbar/>
+        <Col className="col">
           <Routes>
             {/* <Route path = "/antiques" element = {Antiques} />
             <Route path = "/appliances" element = {Appliances} />
@@ -50,11 +54,14 @@ function App() {
             <Route path = "/toys" element = {Toys} />
             <Route path = "/gaming" element = {Gaming} /> */}
           <Route path="/home" element={<Home/>} />
+          <Route path="/login" element={<login/>} />
           </Routes>
+          </Col>
       {/* <Header/> */}
+      </Row>
+      </Container>
       </BrowserRouter>
       <Footer/>
-      </Row>
     </div>
   );
 }

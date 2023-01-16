@@ -1,27 +1,31 @@
 import React from "react"
 import { MdSearch } from "react-icons/md"
 import Col from 'react-bootstrap/Col'
-import { Container, Row, Button } from "react-bootstrap"
+import { Container, Row, Button} from "react-bootstrap"
+import { 
+    MdShoppingBasket
+} from "react-icons/md"
 import './Header.css'
 import { Link } from "react-router-dom";
 
 
 function Header (){
     return(
-        <Container>
+        <Container fluid className="header">
         <Row>
-            {/* <Col>
+            <Col className="icon col-1">
+            <img src={require("../../assets/BazaarBuddies.png")}  />
+            </Col>
+            <Col className="col-2">
                 <h4>Bazaar Buddies</h4>
                 <p>Your Friends, Your Shopping</p>
-            </Col> */}
-            <Col>
-            <nav className = "header"> 
+            </Col>
+            <Col className="col-2">
             <div className ="header__Search"> 
-                <input type="text" className="header__searchInput"/>
-                <Col>
-                <Button variant="primary">Search<MdSearch/></Button>
-                </Col>
+                <input type="text" className="header__searchInput"/><Button variant="primary">Search<MdSearch/></Button>
             </div>
+            </Col>
+            <Col>
             {/*first link */}
             <Link to="/" className="header__link">
             <div className = "header__option">
@@ -32,10 +36,12 @@ function Header (){
             {/*second link */}
             <Link to="/checkout" className="header__link">
             <div className = "header__optionBasket">
-                <button ShoppingBasketIcon>Checkout</button>
+                <button >Checkout</button>
+                <MdShoppingBasket/>
+                {/*number of items in the basket */}
+                <span className = "header__optionLineTwo header__basketCount"> 2 </span> {/*testing*/}
             </div>
             </Link>
-            </nav>
             </Col>
         </Row>
         </Container>

@@ -9,6 +9,9 @@ function Login(){
                 <form>
                     <h3>E-mail</h3>
                     <input type="Email"/>
+                    <h3>Password</h3>
+                    <input type="password"/>
+                    <button type="summit" className="login__signInButton">Sign In</button>
                 </form>
             </div>
         </div>

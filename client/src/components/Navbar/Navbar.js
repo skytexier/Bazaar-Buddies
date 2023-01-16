@@ -1,4 +1,4 @@
-
+import { Nav } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import { useState,} from "react";
@@ -8,18 +8,34 @@ import "./Navbar.css";
 export default function Navbar() {
     
     const [sidebar, setSideBar] = useState(true);
+    const [activeCat, setActiveCat] = useState('');
+    const [activeTitle, setActiveTitle] = useState('');
+
+    const onActiveCategory = (value) => {
+        setActiveCat(value)
+    };
+
 
 return (
-    <Col lg={2}>
-        <nav className = {sidebar ? "nav-menu active" : "nav-menu"}>
+
+    <Col className="col-2 p-0">
+
+
+        <ul className = "nav-menu">
+            <li>{activeCat}
+                <span>{activeTitle}</span>
+            </li>
+        </ul>
+
+        <Nav className = {sidebar ? "nav-menu active" : "nav-menu"}>
+
+        
+
             <ul className = "nav-menu-items">
-            <Link to= "/home"className = "logo-section">
-            <img src={require("../../assets/BazaarBuddies.png")}  />
-            </Link>
                 {SidebarData.map((item, index) => {
                     return (
                         <li key= {index} className = {item.cName}>
-                            <Link to = {item.path}>
+                            <Link to = {item.path} onClick={() => onActiveCategory(item.icon) & setActiveTitle(item.title)}>
                                 {item.icon}
                                 <span>{item.title}</span>
                             </Link>
@@ -27,7 +43,7 @@ return (
                     );
                 })}
             </ul>
-        </nav>
+        </Nav>
         </Col>
     )
 };

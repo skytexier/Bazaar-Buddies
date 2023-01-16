@@ -23,10 +23,10 @@ export default function Splash(){
         ];
 
     return (
-        <section className="project" id="projects">
-                    <Col size={6}>
+        <section className="products" id="products">
+                    <Col>
                         <h2>{items[1].category}</h2>
-                            <Row>
+                            <Row className="justify-content-center">
                                 {
                                     items.map((item, index) => {
                                         return (
