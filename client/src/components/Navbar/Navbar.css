@@ -14,6 +14,7 @@
     background-color: var(--navBg);
     padding: 10px;
     
+    
   }
   
   .nav-text {
@@ -47,22 +48,15 @@
     width: 100%;
     padding: 0;
     overflow: auto;
-    height: 600px;
+    position: sticky;
+    top: 0;
   }
 
   ::-webkit-scrollbar{
     display: none;
   }
   
-  .navbar-toggle {
-    background-color: var(--navBg);
-    width: 50%;
-    height: 80px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-  }
-  
+
   .nav-menu-items li span {
     padding-left: 1em;
     

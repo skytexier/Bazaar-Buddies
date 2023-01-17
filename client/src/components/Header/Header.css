@@ -1,16 +1,43 @@
+:root {
+  --navBg: #1d202f;
+}
+
 .header {
     background-color: #1d202f;
     height: 100px;
 }
 
-.header__search{
+.user-options-box{
+  align-items: center;
+  justify-content: right;
+}
 
+.user-options{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
 }
-.header__searchInput{
-}
-.header__option{
 
+.user-options a {
+  padding-left: 2rem;
+  text-decoration: none;
+  color: white;
 }
+
+
+
+.header-option{
+  padding: 1rem;
+}
+
+.header-option a {
+  padding-left: 2rem;
+}
+
+
+
 
 .header .col {
     max-height: 100px;
@@ -33,10 +60,12 @@
   
 
 .header .icon {
+    border-radius: 100px;
     width: 125px;
     object-fit: contain;
     overflow: hidden;
-    background: linear-gradient(var(--rotate), rgb(255, 104, 104) -5.91%, rgb(255, 217, 4) 111.58%);
+    background: linear-gradient(var(--rotate), rgb(255, 104, 104), rgb(255, 217, 4));
     animation: spin 5s ease infinite;
+    margin-left: 10px;
 }
 

@@ -25,23 +25,41 @@ function Header (){
                 <input type="text" className="header__searchInput"/><Button variant="primary">Search<MdSearch/></Button>
             </div>
             </Col>
-            <Col>
+            <Col className="user-options">
             {/*first link */}
-            <Link to="/" className="header__link">
-            <div className = "header__option">
-                <span className ="header__optionLineOne"> Hello, User</span>
-                <span className ="header__optionLineTwo"> Sign In</span>
-            </div>
-            </Link>
-            {/*second link */}
-            <Link to="/checkout" className="header__link">
-            <div className = "header__optionBasket">
-                <button >Checkout</button>
-                <MdShoppingBasket/>
-                {/*number of items in the basket */}
-                <span className = "header__optionLineTwo header__basketCount"> 2 </span> {/*testing*/}
-            </div>
-            </Link>
+            <ul className="user-options">
+                <li>
+                    <Link to="/" className="header-link">
+                        <div className = "header-option">
+                            <span className ="header-text"> Sign In</span>
+                        </div>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/" className="header-link">
+                        <div className = "header-option">
+                            <span className ="header-text"> Sign Up</span>
+                        </div>
+                    </Link>
+                </li>
+                <li>
+                      {/*second link */}
+                    <Link to="/checkout" className="header-link">
+                         <div className = "header-option">
+                            <MdShoppingBasket/>
+                            {/*number of items in the basket */}
+                                <span className = "header-optionLineTwo header-basketCount"> 2 </span> {/*testing*/}
+                         </div>
+                    </Link>
+                </li>
+            
+
+
+            </ul>
+
+
+            
+          
             </Col>
         </Row>
         </Container>

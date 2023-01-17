@@ -1,16 +1,16 @@
 import React from "react";
 import Header from "./components/Header/Header.js";
 import Footer from "./components/Footer/Footer.js";
-import Page from "./components/Page.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import SidebarData from "./components/Navbar/SidebarData.js"
 import { BrowserRouter, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Container, Col, Row } from "react-bootstrap";
 // import Footer from "./components/Footer/index";
-import Splash from "./components/Splash.js";
+import Splash from "./components/Splash/Splash.js";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home'
+import Antiques from "./pages/Antiques.js";
 
 
 function App() {
@@ -53,6 +53,7 @@ function App() {
             <Route path = "/tools" element = {Tools} />
             <Route path = "/toys" element = {Toys} />
             <Route path = "/gaming" element = {Gaming} /> */}
+          <Route path = "/antiques" element = {<Antiques/>} />
           <Route path="/home" element={<Home/>} />
           <Route path="/login" element={<login/>} />
           </Routes>

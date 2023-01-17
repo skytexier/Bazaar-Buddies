@@ -1,7 +1,10 @@
 import React from 'react'
+import './Login.css'
 
 function Login(){
-
+    <link>
+        <img className='login__logo' src='../../assets/BazaarBuddies.png' alt='' />
+    </link>
     return( 
         <div className="Login">
             <div className ="login__container">
@@ -13,6 +16,7 @@ function Login(){
                     <input type="password"/>
                     <button type="summit" className="login__signInButton">Sign In</button>
                 </form>
+                <button className='login__registerButton'>Create your account</button>
             </div>
         </div>
     )

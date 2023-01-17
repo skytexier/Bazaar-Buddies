@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
-import Splash from '../components/Splash.js'
+import Splash from '../components/Splash/Splash.js'
 
 
 const Home = () => {
