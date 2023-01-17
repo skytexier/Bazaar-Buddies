@@ -1,23 +1,28 @@
-.login{
-    background-color: white;
-    height: 100vh;
+.login col {
+    width: 450px;
+    border: solid;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
+
+.login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
 .login__logo{
     width: 100px;
     object-fit: contain;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.login__container{
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border: 1px solid lightgrey;
-}
+
 .login__signInButton, .login__registerButton{
     background-color: yellowgreen;
     border: 1px solid;

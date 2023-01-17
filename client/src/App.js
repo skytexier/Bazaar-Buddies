@@ -11,6 +11,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home'
 import Antiques from "./pages/Antiques.js";
+import Login from "./components/Login.js"
+
+
 
 
 function App() {
@@ -25,6 +28,7 @@ function App() {
     //   <Page currentPage = {currentPage} />
     //   <Footer/>
     // </div>
+
     // </>
     <div className="App">
       {/* <Navbar/> */}
@@ -55,7 +59,7 @@ function App() {
             <Route path = "/gaming" element = {Gaming} /> */}
           <Route path = "/antiques" element = {<Antiques/>} />
           <Route path="/home" element={<Home/>} />
-          <Route path="/login" element={<login/>} />
+          <Route path="/login" element={<Login/>} />
           </Routes>
           </Col>
       {/* <Header/> */}
@@ -64,6 +68,7 @@ function App() {
       </BrowserRouter>
       <Footer/>
     </div>
+   
   );
 }
 

@@ -15,6 +15,12 @@ type Product {
     category: Category
 }
 
+type User {
+    _id: ID
+    name: String
+    email: String
+}
+
 type Query {
     categories: [Category]
     products(category: ID, name: String): [Product]
