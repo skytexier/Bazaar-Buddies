@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 function Header (){
     return(
         <Container fluid className="header">
-        <Row>
+        <Row className='header-row'>
             <Col className="icon col-1">
             <img src={require("../../assets/BazaarBuddies.png")}  />
             </Col>

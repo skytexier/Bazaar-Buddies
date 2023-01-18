@@ -9,7 +9,7 @@ const Books = (props) => {
     return(
         <Col lg={12}>
         <section className="products" id="products">
-          <h2>Appliances</h2>
+          <h2>Books</h2>
               <Row className="justify-content-center">
         {itemArr.map((item, index) => {
           return <ProductCard

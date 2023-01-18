@@ -59,3 +59,7 @@
     margin-left: 10px;
 }
 
+.header-row {
+  max-height: 100px;
+}
+
