@@ -1,15 +1,20 @@
-:root {
-  --navBg: #1d202f;
-}
 
 .header {
-    background-color: #1d202f;
+    background-color: #ff7e57;
     height: 100px;
 }
 
-.user-options-box{
+.title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  justify-content: right;
+}
+
+.search {
+  display: flex;
+  align-items: center;
 }
 
 .user-options{
@@ -18,30 +23,16 @@
   flex-direction: row;
   justify-content: right;
   align-items: center;
+  right: 0;
 }
 
+
 .user-options a {
-  padding-left: 2rem;
+  padding: 15px;
   text-decoration: none;
   color: white;
 }
 
-
-
-.header-option{
-  padding: 1rem;
-}
-
-.header-option a {
-  padding-left: 2rem;
-}
-
-
-
-
-.header .col {
-    max-height: 100px;
-}
 
 @property --rotate {
     syntax: "<angle>";
@@ -58,7 +49,6 @@
     }
   }
   
-
 .header .icon {
     border-radius: 100px;
     width: 125px;

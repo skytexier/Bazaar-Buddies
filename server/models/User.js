@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const { Schema, model } = require('mongoose');
-const productSchema = require('./Products')
+const productSchema = require('./Product')
 
 const userSchema = new Schema(
     {
@@ -21,7 +21,7 @@ const userSchema = new Schema(
             allowNull:false,
             required: true,
         },
-        userProducts: [productSchema],
+        // userProducts: [productSchema],
 },
 {
     toJSON: {

@@ -1,6 +1,6 @@
-const Category = require('./Categories');
+const Category = require('./Category');
 const User = require('./User');
-const Products = require('./Products');
+const Product = require('./Product');
 
-module.exports = {Category, User, Products}
+module.exports = {Category, User, Product}
 //building schemas and models -SHT

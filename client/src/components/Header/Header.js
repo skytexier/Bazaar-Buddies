@@ -16,41 +16,48 @@ function Header (){
             <Col className="icon col-1">
             <img src={require("../../assets/BazaarBuddies.png")}  />
             </Col>
-            <Col className="col-2">
+            <Col className="title col-2">
                 <h4>Bazaar Buddies</h4>
                 <p>Your Friends, Your Shopping</p>
             </Col>
-            <Col className="col-2">
+            <Col className="search col-2">
             <div className ="header__Search"> 
                 <input type="text" className="header__searchInput"/><Button variant="primary">Search<MdSearch/></Button>
             </div>
             </Col>
-            <Col className="user-options">
+            <Col className="user-options col">
             {/*first link */}
             <ul className="user-options">
                 <li>
-                    <Link to="/" className="header-link">
+                    <Link to="/signup" className="header-link">
+                        <Button>
                         <div className = "header-option">
                             <span className ="header-text"> Sign In</span>
                         </div>
+                        </Button>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/" className="header-link">
+                    <Link to="/logout" className="header-link">
+                    <Button>
                         <div className = "header-option">
                             <span className ="header-text"> Sign Up</span>
                         </div>
+                    </Button>
                     </Link>
                 </li>
                 <li>
                       {/*second link */}
                     <Link to="/checkout" className="header-link">
+                    <Button>
                          <div className = "header-option">
                             <MdShoppingBasket/>
                             {/*number of items in the basket */}
-                                <span className = "header-optionLineTwo header-basketCount"> 2 </span> {/*testing*/}
+                                <span className = "header-optionLineTwo header-basketCount"> Cart </span> {/*testing*/}
                          </div>
+                        </Button>
                     </Link>
+
                 </li>
             
 

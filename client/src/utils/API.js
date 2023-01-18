@@ -17,3 +17,12 @@ export const createUser = (userData) => {
     });
 };
 
+export const loginUser = (userData) => {
+    return fetch('/api/user/login', {
+        method: 'POST',
+        headers: {
+            'Conent-Type': 'application/json',
+        },
+        body: JSON.stringify(userData)
+    });
+};
