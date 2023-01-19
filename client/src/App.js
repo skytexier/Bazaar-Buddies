@@ -10,11 +10,30 @@ import Footer from "./components/Footer/Footer.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import SidebarData from "./components/Navbar/SidebarData.js"
 import Login from "./components/Login.js"
+import Register from "./components/Register.js"
+import CartList from "./components/CartList.js"
+import Checkout from "./components/Checkout.js"
 
+
+// import { AuthProvider } from './context/auth';
+// import AuthRoute from './utils/AuthRoute';
 // Pages import
-import Home from './pages/Home'
+import Home from './pages/HomeGoods'
 import Antiques from "./pages/Antiques.js";
 import Appliances from './pages/Appliances.js'
+import AutoParts from "./pages/Autoparts.js";
+import Books from "./pages/Books.js";
+import Clothes from "./pages/Clothes.js";
+import Electronics from "./pages/Electronics.js";
+import Furniture from './pages/Furniture.js';
+import General from './pages/General.js';
+import HomeGoods from './pages/HomeGoods.js';
+import Jewelry from './pages/Jewelry.js'
+import Sporting from './pages/Sporting.js';
+import Tools from './pages/Tools.js'
+import Toys from './pages/Toys.js';
+import Motors from './pages/Motors.js'
+
 
 
 // React Boostrap / Styling Imports
@@ -60,27 +79,24 @@ function App() {
         <Navbar/>
         <Col className="col">
           <Routes>
-            {/* <Route path = "/antiques" element = {Antiques} />
-            <Route path = "/auto-parts" element = {AutoParts} />
-            <Route path = "/books" element = {Books} />
-            <Route path = "/vehicles" element = {Vehicles} />
-            <Route path = "/clothes" element = {Clothes} />
-            <Route path = "/collectibles" element = {Collectibles} />
-            <Route path = "/electronics" element = {Electronics} />
-            <Route path = "/garden" element = {Garden} />
-            <Route path = "/furniture" element = {Furniture} />
-            <Route path = "/general" element = {General} />
-            <Route path = "/bedroom" element = {Bedroom} />
-            <Route path = "/jewelry" element = {Jewelry} />
-            <Route path = "/music" element = {Music} />
-            <Route path = "/sporting" element = {Sporting} />
-            <Route path = "/tools" element = {Tools} />
-            <Route path = "/toys" element = {Toys} />
-            <Route path = "/gaming" element = {Gaming} /> */}
-          <Route path = "/antiques" element = {<Antiques/>} />
-          <Route path = "/appliances" element = {<Appliances/>} />
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Register/>} />
+          <Route path="/checkout" element={<Checkout/>} />
+          <Route path = "/antiques" element = {<Antiques/>} />
+          <Route path = "/appliances" element = {<Appliances/>} />
+          <Route path = "/auto-parts" element = {<AutoParts/>} />
+          <Route path = "/books" element = {<Books/>} />
+          <Route path = "/clothes" element = {<Clothes/>} />
+          <Route path = "/electronics" element = {<Electronics/>} />
+          <Route path = "/Furniture" element = {<Furniture/>} />
+          <Route path = "/General" element = {<General/>} />
+          <Route path = "/jewelry" element = {<Jewelry/>} />
+          <Route path = "/Sporting" element = {<Sporting/>} />
+          <Route path = "/Tools" element = {<Tools/>} />
+          <Route path = "/Toys" element = {<Toys/>} />
+          <Route path = "/Vehicles" element = {<Motors/>} />
+          <Route path = "/bedroom" element = {<HomeGoods/>} />
           </Routes>
           </Col>
       </Row>

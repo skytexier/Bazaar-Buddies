@@ -1,7 +1,7 @@
 import React from "react"
 import { MdSearch } from "react-icons/md"
 import Col from 'react-bootstrap/Col'
-import { Container, Row, Button} from "react-bootstrap"
+import { Container, Row, Button, Stack} from "react-bootstrap"
 import { 
     MdShoppingBasket
 } from "react-icons/md"
@@ -13,32 +13,32 @@ function Header (){
     return(
         <Container fluid className="header">
         <Row className='header-row'>
-            <Col className="icon col-1">
-            <img src={require("../../assets/BazaarBuddies.png")}  />
+            <Col className="icon col-auto">
+            <img src={require("../../assets/BazaarBuddies.png")} alt="logo"/>
             </Col>
-            <Col className="title col-2">
+            <Col className="title col-auto">
                 <h4>Bazaar Buddies</h4>
                 <p>Your Friends, Your Shopping</p>
             </Col>
-            <Col className="search col-2">
+            <Col className="search col-auto">
             <div className ="header__Search"> 
                 <input type="text" className="header__searchInput"/><Button variant="primary">Search<MdSearch/></Button>
             </div>
             </Col>
-            <Col className="user-options col">
+            <Col className="user-options col-auto">
             {/*first link */}
-            <ul className="user-options">
+            <ul className="user-buttons">
                 <li>
-                    <Link to="/signup" className="header-link">
+                    <Link to="/login" className="header-link">
                         <Button>
                         <div className = "header-option">
-                            <span className ="header-text"> Sign In</span>
+                            <span className ="header-text">Login</span>
                         </div>
                         </Button>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/logout" className="header-link">
+                    <Link to="/register" className="header-link">
                     <Button>
                         <div className = "header-option">
                             <span className ="header-text"> Sign Up</span>
@@ -57,16 +57,8 @@ function Header (){
                          </div>
                         </Button>
                     </Link>
-
                 </li>
-            
-
-
             </ul>
-
-
-            
-          
             </Col>
         </Row>
         </Container>

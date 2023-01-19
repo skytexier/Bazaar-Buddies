@@ -6,12 +6,12 @@ import  Splash  from '../components/Splash/Splash.js'
 
 
 
-const Appliances = (props) => {
+const AutoParts = (props) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=SkyTexie-ReactECo-PRD-f9f3fcb9f-9fbc87f9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=261709&paginationInput.entriesPerPage=25&outputSelector=CategoryHistogram`)
+      const response = await fetch(`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=SkyTexie-ReactECo-PRD-f9f3fcb9f-9fbc87f9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=6028&paginationInput.entriesPerPage=25&outputSelector=CategoryHistogram`)
       const newData = await response.json();
       const itemsList = newData.findItemsByCategoryResponse[0].searchResult[0].item
       console.log(newData)
@@ -41,7 +41,7 @@ const Appliances = (props) => {
     return (
       <Col className='product_box' lg={12}>
         <section className="products" id="products">
-          <h2>Appliances</h2>
+          <h2>Auto Parts</h2>
       <Row className="product_grid">
         {itemArr.map((item, index) => {
           return <ProductCard
@@ -56,4 +56,4 @@ const Appliances = (props) => {
     );
 }
 
-export default Appliances;
+export default AutoParts;

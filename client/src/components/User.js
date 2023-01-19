@@ -1,7 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-export default User = ({name, email, items}) => {
+const User = ({name, email, items}) => {
     return(
         <Col className="col-auto">
             <div className="userCard">
@@ -14,3 +14,5 @@ export default User = ({name, email, items}) => {
         </Col>
     );
 }//working on it (JL) feel free to add on
+
+export default User;
