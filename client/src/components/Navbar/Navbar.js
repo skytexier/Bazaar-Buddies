@@ -18,8 +18,10 @@ export default function Navbar() {
 
 return (
 
-    <Col xs={12} sm={3} md={2} className="p-0">
-        <ul className = "nav-menu">
+    <Col xs={12} sm={3} md={2} className="col-2 p-0">
+
+
+        <ul className = "nav-menu nav_active_category">
             <li>{activeCat}
                 <span>{activeTitle}</span>
             </li>
