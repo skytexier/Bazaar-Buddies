@@ -18,19 +18,13 @@ export default function Navbar() {
 
 return (
 
-    <Col className="col-2 p-0">
-
-
+    <Col xs={12} sm={3} md={2} className="p-0">
         <ul className = "nav-menu">
             <li>{activeCat}
                 <span>{activeTitle}</span>
             </li>
         </ul>
-
         <Nav className = {sidebar ? "nav-menu active" : "nav-menu"}>
-
-        
-
             <ul className = "nav-menu-items">
                 {SidebarData.map((item, index) => {
                     return (
