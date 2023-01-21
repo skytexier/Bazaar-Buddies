@@ -2,10 +2,9 @@ import React, { useContext, useState } from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import { useMutation } from '@apollo/react-hooks'
 import gql from 'graphql-tag';
-
 import { useForm } from '../utils/hooks.js'
 import { AuthContext } from '../context/auth.js';
-// import { useState } from 'react';
+import { ADD_USER } from '../utils/mutations.js';
 
 function Register(props) {
     const context = useContext(AuthContext);
@@ -78,7 +77,9 @@ function Register(props) {
                     error={errors.confirmPassword ? true : false}
                     onChange={onChange}
                 />
-                <Button type="submit" variant="primary">Register</Button>
+                <Button type="submit" variant="primary">
+                    Register
+                </Button>
             </Form>
             {Object.keys(errors).length > 0 && (
                 <div className="ui error message">

@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 export const ProductCard = ({ name, price, category, image, link}) => {
     return (
-        <Col className='product_card'>
+        <Col className='product_card col-auto'>
             <a href={link} target="_blank" rel="noreferrer">
             <div style={{backgroundImage: `url(${image})`, backgroundRepeat: "no-repeat"}} className='product_background'>
             <div className='product_pricebox'>

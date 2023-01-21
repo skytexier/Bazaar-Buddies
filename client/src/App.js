@@ -9,7 +9,6 @@ import Header from "./components/Header/Header.js";
 import Footer from "./components/Footer/Footer.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import SidebarData from "./components/Navbar/SidebarData.js"
-import Login from "./components/Login.js"
 import Register from "./components/Register.js"
 import CartList from "./components/CartList.js"
 import Checkout from "./components/Checkout.js"
@@ -18,7 +17,7 @@ import Checkout from "./components/Checkout.js"
 // import { AuthProvider } from './context/auth';
 // import AuthRoute from './utils/AuthRoute';
 // Pages import
-import Home from './pages/HomeGoods'
+import Home from './pages/Home.js'
 import Antiques from "./pages/Antiques.js";
 import Appliances from './pages/Appliances.js'
 import AutoParts from "./pages/Autoparts.js";
@@ -32,6 +31,9 @@ import Jewelry from './pages/Jewelry.js'
 import Sporting from './pages/Sporting.js';
 import Tools from './pages/Tools.js'
 import Motors from './pages/Motors.js'
+
+// Login/Server Side Pages
+import Login from "./pages/Login.js";
 
 
 
