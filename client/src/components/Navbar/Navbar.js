@@ -18,7 +18,7 @@ export default function Navbar() {
 
 return (
 
-    <Col xs={12} sm={3} md={2} className="col-2 p-0">
+    <Col xs={12} sm={3} md={2} lg={2} className="col-2 p-0">
 
 
         <ul className = "nav-menu nav_active_category">
