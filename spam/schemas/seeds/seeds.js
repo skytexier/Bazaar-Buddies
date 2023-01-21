@@ -1,5 +1,5 @@
-const db = require('../config/connection');
-const { Tech } = require('../models');
+const db = require('../../../server/config/connection');
+const { Tech } = require('../../../server/models');
 
 const techData = require('./techData.json');
 

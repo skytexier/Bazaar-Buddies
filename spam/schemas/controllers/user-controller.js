@@ -1,5 +1,5 @@
-const User = require("../models/User");
-const { signToken } = require('../utils/auth');
+const User = require("../../../server/models/User");
+const { signToken } = require('../../../server/utils/auth');
 
 function createUser(req, res) {
     User.create(req.body)

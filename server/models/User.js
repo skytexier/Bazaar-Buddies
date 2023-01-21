@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const { Schema, model } = require('mongoose');
-const productSchema = require('./Product')
+// const productSchema = require('./Product') (Adding later)
 
 const userSchema = new Schema(
     {
-        name: {
+        username: {
             type: String,
             required: true,
             trim: true,
@@ -22,6 +22,9 @@ const userSchema = new Schema(
             required: true,
         },
         // userProducts: [productSchema],
+        createdAt: {
+            type: String,
+        }
 },
 {
     toJSON: {
@@ -30,19 +33,20 @@ const userSchema = new Schema(
 }
 );
 
-// Hash user password
-userSchema.pre('save', async function (next) {
-    if (this.isNew || this.isModified('password')) {
-        const saltRounds = 11;
-        this.password = await bcrypt.hash(this.password, saltRounds);
-    }
+// Hash user password (done in user resolver)
+// userSchema.pre('save', async function (next) {
+//     if (this.isNew || this.isModified('password')) {
+//         const saltRounds = 11;
+//         this.password = await bcrypt.hash(this.password, saltRounds);
+//     }
 
-    next();
-});
+//     next();
+// });
 
-userSchema.methods.isCorrectPassword = async function (password) {
-    return bcrypt.compareSync(password, this.password);
-};
+// (done in user resolver)
+// userSchema.methods.isCorrectPassword = async function (password) {
+//     return bcrypt.compareSync(password, this.password);
+// };
 
 
 

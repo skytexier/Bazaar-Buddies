@@ -5,7 +5,7 @@ connect(
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        // SECRET_KEY: 'some very secret key',
+        SECRET_KEY: 'some very secret key',
     }
 );
 

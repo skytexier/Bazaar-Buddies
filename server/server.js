@@ -3,7 +3,9 @@ const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth')
 
-const { typeDefs, resolvers } = require('./schemas');
+// const { typeDefs, resolvers } = require('./graphql');
+const typeDefs = require('./graphql/typeDefs');
+const resolvers = require('./graphql/resolvers');
 const db = require('./config/connection');
 // const routes = require("./controllers");
 const PORT = process.env.PORT || 3000;
