@@ -31,7 +31,6 @@ import HomeGoods from './pages/HomeGoods.js';
 import Jewelry from './pages/Jewelry.js'
 import Sporting from './pages/Sporting.js';
 import Tools from './pages/Tools.js'
-import Toys from './pages/Toys.js';
 import Motors from './pages/Motors.js'
 
 
@@ -89,14 +88,13 @@ function App() {
           <Route path = "/books" element = {<Books/>} />
           <Route path = "/clothes" element = {<Clothes/>} />
           <Route path = "/electronics" element = {<Electronics/>} />
-          <Route path = "/Furniture" element = {<Furniture/>} />
-          <Route path = "/General" element = {<General/>} />
+          <Route path = "/furniture" element = {<Furniture/>} />
+          <Route path = "/beyond" element = {<General/>} />
           <Route path = "/jewelry" element = {<Jewelry/>} />
-          <Route path = "/Sporting" element = {<Sporting/>} />
-          <Route path = "/Tools" element = {<Tools/>} />
-          <Route path = "/Toys" element = {<Toys/>} />
-          <Route path = "/Vehicles" element = {<Motors/>} />
-          <Route path = "/bedroom" element = {<HomeGoods/>} />
+          <Route path = "/sporting" element = {<Sporting/>} />
+          <Route path = "/tools" element = {<Tools/>} />
+          <Route path = "/motors" element = {<Motors/>} />
+          <Route path = "/homegoods" element = {<HomeGoods/>} />
           </Routes>
           </Col>
       </Row>
