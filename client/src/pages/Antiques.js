@@ -22,7 +22,8 @@ const Antiques = (props) => {
   const fetchData = async () => {
     try {
       const response = await fetch(`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=SkyTexie-ReactECo-PRD-f9f3fcb9f-9fbc87f9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&paginationInput.entriesPerPage=25&keywords=${searchInput}&categoryId=${searchCat}&`, {
-        'Content-Type' : 'application/json'
+        'Content-Type' : 'application/json',
+        'Access-Control-Allow-Origin': 'null'
       })
       const newData = await response.json();
       const itemsList = newData.findItemsAdvancedResponse[0].searchResult[0].item

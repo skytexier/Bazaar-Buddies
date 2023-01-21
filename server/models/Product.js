@@ -16,7 +16,6 @@ const productSchema = new Schema({
     price: {
         type: Number,
         required: true,
-        min: 0
     },
     category: {
         type: Schema.Types.ObjectId,
@@ -26,7 +25,7 @@ const productSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true
+        required: false
     }
 });
 
