@@ -1,4 +1,4 @@
-const { User, Products, Category } = require('../models');
+const { User, Product, Category } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth')
 
@@ -11,6 +11,20 @@ const resolvers = {
             }
             throw new AuthenticationError('You are logged in!');
         },
+
+        categories: async (parent, args, context) => {
+            return await Category.find()
+        },
+
+        products: async (parent, args, context) => {
+            const { category, name } = args;
+            return await Product.find({ category, name });
+        },
+
+        product: async (parent, args, context) => {
+            const { _id } = args;
+            return await Product.findById(_id);
+        },
     },
 
     Mutation: {
@@ -19,6 +33,13 @@ const resolvers = {
             const token = signToken(user);
 
             return { token, user };
+        },
+
+        updateUser: async (parent, args, context) => {
+            if (context.user) {
+                return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+            }
+            throw new AuthenticationError('You must be logged in to update a user')
         },
 
         login: async (parent, {email, password }) => {
