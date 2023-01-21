@@ -20,11 +20,6 @@ function Header (){
                 <h4>Bazaar Buddies</h4>
                 <p>Your Friends, Your Shopping</p>
             </Col>
-            <Col className="search col-auto">
-            <div className ="header__Search"> 
-                <input type="text" className="header__searchInput"/><Button variant="primary">Search<MdSearch/></Button>
-            </div>
-            </Col>
             <Col className="user-options col-auto">
             {/*first link */}
             <ul className="user-buttons">
