@@ -1,16 +1,18 @@
-import React from "react";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-export default function User() {
-    const information = `Username: 
-    `;
-
+const User = ({name, email, items}) => {
     return(
-        <section className="flex place-content center" id="user">
-            <div className="">
-                <p className="">
-                    {information}
-                </p>
+        <Col className="col-auto">
+            <div className="userCard">
+                <h4>{name}</h4>
+                <h4>{email}</h4>
+                <div className="posts">
+                    {items}
+                </div>
             </div>
-        </section>
+        </Col>
     );
 }//working on it (JL) feel free to add on
+
+export default User;

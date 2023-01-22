@@ -1,0 +1,79 @@
+
+.header {
+    background-image: url("/../client/src/assets/bazaaar.png");
+    background-position: 1;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: auto;
+}
+
+
+.header-row {
+  align-items: center;
+}
+
+.title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 0.2rem;
+  border-radius: 100px;
+  color: rgb(0, 0, 0);
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(250, 169, 63);
+}
+
+.header__Search {
+  display: flex;
+}
+
+.user-buttons {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  padding-left: 0;
+  margin: auto;
+  padding: 15px;
+}
+
+.user-options a {
+  margin-left: 5px;
+}
+
+
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  
+.header .icon {
+    max-width: 100px;
+    border-radius: 100px;
+    object-fit: contain;
+    overflow: hidden;
+    background: linear-gradient(var(--rotate), rgb(255, 104, 104), rgb(255, 217, 4));
+    animation: spin 5s ease infinite;
+    margin: 15px;
+}
+
+@media (max-width: 850px){
+  .header-row {
+    flex-direction: column;
+  }
+
+}
+  

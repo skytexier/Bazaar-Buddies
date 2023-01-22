@@ -1,16 +1,23 @@
-import Row from 'react-bootstrap/Row';
+// import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+// import Hr from 'react-native-hr-component'
 
 
-export const ProductCard = ({ name, price, category}) => {
+export const ProductCard = ({ name, price, category, image, link}) => {
     return (
-        <Col sm={2} md={4}>
-            <div className='productCard'>
-                <h4>{name}</h4>
-                <span className='productText'>${price}</span>
-                <br></br>
-                <span>{category}</span>
+        <Col className='product_card col-auto'>
+            <a href={link} target="_blank" rel="noreferrer">
+            <div style={{backgroundImage: `url(${image})`, backgroundRepeat: "no-repeat"}} className='product_background'>
+            <div className='product_pricebox'>
+            <span className='product_price'>${price}</span><br></br>
             </div>
+            <div className='product_content'>
+                <h4 className='product_heading'>{name}</h4>
+                {/* <div style={{ flex: 1, backgroundColor: "#6F38C5", height: "3px" }} /> */}
+                <span className='product_subCategory'>Sub-Category: {category}</span>
+                </div>
+            </div>
+            </a>
         </Col>
     )
 };

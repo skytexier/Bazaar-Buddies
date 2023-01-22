@@ -1,8 +1,8 @@
 // import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ProductCard } from "./ProductCard.js";
+import { ProductCard } from "../ProductCard.js";
 
-export default function Splash(){
+export default function Splash(props){
     
         const items = [
             {
@@ -23,10 +23,10 @@ export default function Splash(){
         ];
 
     return (
-        <section className="project" id="projects">
-                    <Col size={6}>
-                        <h2>{items[1].category}</h2>
-                            <Row>
+        <section className="products" id="products">
+                    <Col>
+                        <h2>{props.category}</h2>
+                            <Row className="justify-content-center">
                                 {
                                     items.map((item, index) => {
                                         return (

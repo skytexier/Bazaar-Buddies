@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Washer",
+        "price": "101.00",
+        "category": "Appliances",
+        "image": "",
+        "link": ""
+    },
+    {
+        "name": "Washer2",
+        "price": "102.00",
+        "category": "Appliances",
+        "image": "",
+        "link": ""
+    },
+    {
+        "name": "Washer3",
+        "price": "103.00",
+        "category": "Appliances",
+        "image": "",
+        "link": ""
+    },
+    {
+        "name": "Washer4",
+        "price": "104.00",
+        "category": "Appliances",
+        "image": "",
+        "link": ""
+    },
+    {
+        "name": "Washer5",
+        "price": "105.00",
+        "category": "Appliances",
+        "image": "",
+        "link": ""
+    },
+    {
+        "name": "Washer6",
+        "price": "106.00",
+        "category": "Appliances",
+        "image": "",
+        "link": ""
+    }
+]
