@@ -23,7 +23,7 @@ type User {
 
 type Query {
     categories: [Category]
-    products(category: ID, name: String): [Product]
+    products: [Product]
     product(_id: ID): [Product]
     me: User
 }

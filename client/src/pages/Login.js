@@ -10,7 +10,7 @@ import { useForm } from '../utils/hooks.js'
 import { AuthContext } from '../context/auth.js';
 
 function Login(props) {
-    const context = useContext(AuthContext);
+  const context = useContext(AuthContext);
   const [errors, setErrors] = useState({});
 
   const { onChange, onSubmit, values } = useForm(loginUserCallback, {

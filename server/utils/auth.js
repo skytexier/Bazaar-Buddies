@@ -8,11 +8,13 @@ module.exports - {
     // Middleware authenticated routes 
     authMiddleware: function (req, res, next){
         // allow token to be sent thru query or header
-        let token = req.query.token || req.headers.authorization;
+        let token = req.body.token || req.query.token || req.headers.authorization;
 
         if (req.headers.authorization){
             token = token.split(' ').pop().trim();
         }
+
+        console.log('token', token)
 
         if (!token) {
             return res.status(400).json({message: 'Yo you need a token bro, sign up'})
@@ -27,8 +29,7 @@ module.exports - {
             return res.status(400).json({message: 'Yo you need a token bro, sign up'})
         }
 
-        // Calls next endpoint
-        next();
+        return req;
     },
 
     signToken: function ({ name, email, _id}){

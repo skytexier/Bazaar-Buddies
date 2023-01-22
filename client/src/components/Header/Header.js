@@ -35,7 +35,7 @@ function Header (){
                     </Link>
                 </li>
                 <li>
-                    <Link to="/register" className="header-link">
+                    <Link to="/signup" className="header-link">
                     <Button variant="warning">
                         <div className = "header-option">
                             <span className ="header-text"> Sign Up</span>

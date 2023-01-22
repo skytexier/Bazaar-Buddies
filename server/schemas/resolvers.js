@@ -17,8 +17,7 @@ const resolvers = {
         },
 
         products: async (parent, args, context) => {
-            const { category, name } = args;
-            return await Product.find({ category, name });
+            return await Product.find()
         },
 
         product: async (parent, args, context) => {

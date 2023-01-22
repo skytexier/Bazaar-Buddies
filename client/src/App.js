@@ -2,7 +2,7 @@
 import React from "react";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter, BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components import
 import Header from "./components/Header/Header.js";
@@ -34,6 +34,8 @@ import Motors from './pages/Motors.js'
 
 // Login/Server Side Pages
 import Login from "./pages/Login.js";
+import Signup from './pages/Signup.js'
+import UserPosts from './pages/UserPosts'
 
 
 
@@ -68,12 +70,10 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // const [pages] = useState(["item", "pay", "post"]);
-  // const [currentPage, setCurrentPage] = useState(pages[0]);
   return (
     <ApolloProvider client={client}>
     <div className="App">
-      <BrowserRouter>
+      <Router>
       <Header/>
       <Container fluid>
         <Row>
@@ -82,8 +82,9 @@ function App() {
           <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<Register/>} />
+          <Route path="/signup" element={<Signup/>} />
           <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/userproducts" element={<UserPosts/>} />
           <Route path = "/antiques" element = {<Antiques/>} />
           <Route path = "/appliances" element = {<Appliances/>} />
           <Route path = "/auto-parts" element = {<AutoParts/>} />
@@ -101,7 +102,7 @@ function App() {
           </Col>
       </Row>
       </Container>
-      </BrowserRouter>
+      </Router>
       <Footer/>
     </div>
     </ApolloProvider>
