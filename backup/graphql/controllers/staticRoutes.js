@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const {User} = require("../models/User.js");
-const loginCheck = require("../utils/loginCheck");
+const {User} = require("../../../server/models/User.js");
+const loginCheck = require("../../../server/utils/loginCheck");
 
 router.get("/login", async (req,res)=>{
     if(req.session.logged_in){

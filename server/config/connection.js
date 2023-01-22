@@ -10,6 +10,9 @@ connect(
 );
 
 
-module.exports = connection;
+module.exports = {
+    connection, 
+    SECRET_KEY: "secretkey",
+}
 
 // MN
