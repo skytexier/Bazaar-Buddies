@@ -5,7 +5,7 @@ const productSchema = require('./Product')
 
 const userSchema = new Schema(
     {
-        username: {
+        name: {
             type: String,
             required: true,
             trim: true,

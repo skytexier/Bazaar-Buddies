@@ -76,4 +76,17 @@ function Login(props) {
         </div>
     );
 }
+
+const LOGIN_USER = gql`
+  mutation login($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
+      id
+      email
+      username
+      createdAt
+      token
+    }
+  }
+`;
+
 export default Login;

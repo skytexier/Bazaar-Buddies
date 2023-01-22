@@ -17,16 +17,7 @@ type Product {
 
 type User {
     _id: ID
-    username: String!
-    email: String!
-    token: String!
-    createdAt: String!
-}
-
-type RegisterInput {
-    username: String!
-    password: String!
-    confirmPassword: String!
+    name: String!
     email: String!
 }
 
@@ -41,7 +32,6 @@ type Auth {
     token: ID
     user: User
 }
-
 
 type Mutation {
     login(email: String!, password: String!): Auth
