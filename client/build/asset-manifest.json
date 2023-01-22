@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.08f031a7.css",
+    "main.js": "/static/js/main.92804ee3.js",
+    "static/js/787.9fe25820.chunk.js": "/static/js/787.9fe25820.chunk.js",
+    "static/media/bazaaar.png": "/static/media/bazaaar.efe5d8737dd12367cd9c.png",
+    "static/media/BazaarBuddies.png": "/static/media/BazaarBuddies.9974510d3a3cb2c63099.png",
+    "index.html": "/index.html",
+    "main.08f031a7.css.map": "/static/css/main.08f031a7.css.map",
+    "main.92804ee3.js.map": "/static/js/main.92804ee3.js.map",
+    "787.9fe25820.chunk.js.map": "/static/js/787.9fe25820.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08f031a7.css",
+    "static/js/main.92804ee3.js"
+  ]
+}
