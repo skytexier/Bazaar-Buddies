@@ -4,10 +4,20 @@ import {Container, Row, Col, Form, Button} from 'react-bootstrap';
 import { ProductCard } from '../components/ProductCard.js';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../utils/queries';
+import {useDispatch, useSelector} from 'react-redux';
 
 function UserPosts(){
+    const dispatch = useDispatch();
+    const state = useSelector((state) => state)
     const {loading, data} = useQuery(QUERY_PRODUCTS);
     console.log(data)
+
+    useEffect(() => {
+      if (data) {
+        dispatch
+
+      }
+    })
 
     return (
         <Col className='product_box' lg={12}>
