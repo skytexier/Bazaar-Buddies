@@ -16,12 +16,16 @@ const productSchema = new Schema({
     price: {
         type: Number,
         required: true,
-        min: 0
     },
     category: {
         type: Schema.Types.ObjectId,
         ref: 'Category',
         required: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: false
     }
 });
 

@@ -1,20 +1,29 @@
 
 .header {
-    background-color: #ff7e57;
+    background-image: url("/../client/src/assets/bazaaar.png");
+    background-position: 1;
+    background-repeat: no-repeat;
+    background-size: 100%;
     margin: auto;
 }
 
+
 .header-row {
-  justify-content: space-evenly;
   align-items: center;
 }
 
 .title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 0.2rem;
+  border-radius: 100px;
+  color: rgb(0, 0, 0);
+  font-weight: 100;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  background-color: rgb(250, 169, 63);
 }
 
 .header__Search {
@@ -27,6 +36,7 @@
   text-decoration: none;
   padding-left: 0;
   margin: auto;
+  padding: 15px;
 }
 
 .user-options a {
@@ -60,3 +70,10 @@
     margin: 15px;
 }
 
+@media (max-width: 850px){
+  .header-row {
+    flex-direction: column;
+  }
+
+}
+  

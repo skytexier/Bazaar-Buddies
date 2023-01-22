@@ -1,10 +1,10 @@
 
 import {
-    IoIosShirt, IoIosDesktop, IoIosAmericanFootball, IoIosBody, IoLogoGameControllerB, IoMdRocket, IoMdHammer, IoMdMusicalNotes
+    IoIosShirt, IoIosDesktop, IoIosAmericanFootball, IoIosBody, IoLogoGameControllerB, IoMdRocket, IoMdHammer, IoMdMusicalNotes, IoIosCloud
 } from 'react-icons/io'
 
 import { 
-    MdBlender, MdChair, MdBed, MdEmojiFoodBeverage, MdCarRepair, MdLocalFlorist, MdAllInbox, MdMenuBook, MdDirectionsCarFilled, MdWatch 
+    MdBlender, MdChair, MdBed, MdEmojiFoodBeverage, MdCarRepair, MdLocalFlorist, MdAllInbox, MdMenuBook, MdDirectionsCarFilled, MdWatch, MdSpaceDashboard 
 } from "react-icons/md"
 
 export const SidebarData = [
@@ -33,8 +33,8 @@ export const SidebarData = [
         cName: "nav-text nav-icon"
     },
     {
-        title:"Vehicles",
-        path: "/vehicles",
+        title:"Motors",
+        path: "/motors",
         icon: <MdDirectionsCarFilled/>,
         cName: "nav-text nav-icon"
     },
@@ -57,14 +57,8 @@ export const SidebarData = [
         cName: "nav-text nav-icon"
     },
     {
-        title:"General",
-        path: "/general",
-        icon: <MdAllInbox/>,
-        cName: "nav-text nav-icon"
-    },
-    {
-        title:"Bedroom",
-        path: "/bedroom",
+        title:"Home Goods",
+        path: "/homegoods",
         icon: <MdBed/>,
         cName: "nav-text nav-icon"
     },
@@ -87,9 +81,9 @@ export const SidebarData = [
         cName: "nav-text nav-icon"
     },
     {
-        title:"Toys",
-        path: "/toys",
-        icon: <IoMdRocket/>,
+        title:"The Beyond",
+        path: "/beyond",
+        icon: <IoIosCloud/>,
         cName: "nav-text nav-icon"
     },
 ];

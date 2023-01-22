@@ -74,7 +74,7 @@
     padding-left: 1rem;
   }
 
-  @media (max-width:1250px) {
+  @media (max-width:1350px) {
     .nav-text li {
       display: flex;
       flex-direction: row;
@@ -95,7 +95,6 @@
       justify-content: center;
       align-items: center;
       padding-left: 0;
-      font-size: 599;
       
     }
 
@@ -107,3 +106,30 @@
     }
 
   }
+
+  @media (max-width:575px) {
+  
+    
+   
+
+  
+    .nav_active_category{
+      display: none;
+    }
+
+    .nav-icon {
+      display: inline-flex;
+      padding: 1rem;
+    }
+
+    .nav-menu-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1rem;
+
+    }
+    }
+    
+
+  

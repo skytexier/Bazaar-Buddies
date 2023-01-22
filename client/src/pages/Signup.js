@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react';
 import { useMutation } from '@apollo/react-hooks'
 import gql from 'graphql-tag';
-
 import { useForm } from '../utils/hooks.js'
 import { AuthContext } from '../context/auth.js';
-// import { useState } from 'react';
+import { ADD_USER } from '../utils/mutations.js';
 
 function Register(props) {
-    const context = useContext(AuthContext);
+const context = useContext(AuthContext);
   const [errors, setErrors] = useState({});
 
   const { onChange, onSubmit, values } = useForm(registerUser, {
@@ -18,7 +18,7 @@ function Register(props) {
     confirmPassword: ''
   });
 
-  const [addUser, { loading }] = useMutation(REGISTER_USER, {
+  const [addUser, { loading }] = useMutation(ADD_USER, {
     update(
       _,
       {
@@ -37,6 +37,7 @@ function Register(props) {
   function registerUser() {
     addUser();
   }
+
 
     return(
         <div className="form-content"> 
@@ -78,7 +79,9 @@ function Register(props) {
                     error={errors.confirmPassword ? true : false}
                     onChange={onChange}
                 />
-                <Button type="submit" variant="primary">Register</Button>
+                <Button type="submit" variant="primary">
+                    Register
+                </Button>
             </Form>
             {Object.keys(errors).length > 0 && (
                 <div className="ui error message">
@@ -95,15 +98,15 @@ function Register(props) {
 
 const REGISTER_USER = gql`
     mutation register(
-        $username: String!
+        $name: String!
         $email: String!
         $password: String!
         $confirmPassword: String!
     )
     {
-        register(
+        addUser(
             registerInput: {
-                username: $username
+                name: $username
                 email: $email
                 password: $password
                 confirmPassword: $confirmPassword

@@ -14,23 +14,20 @@ function Header (){
         <Container fluid className="header">
         <Row className='header-row'>
             <Col className="icon col-auto">
+            <Link to="/" className="header-link">
             <img src={require("../../assets/BazaarBuddies.png")} alt="logo"/>
+            </Link>
             </Col>
             <Col className="title col-auto">
-                <h4>Bazaar Buddies</h4>
-                <p>Your Friends, Your Shopping</p>
-            </Col>
-            <Col className="search col-auto">
-            <div className ="header__Search"> 
-                <input type="text" className="header__searchInput"/><Button variant="primary">Search<MdSearch/></Button>
-            </div>
+                <h1>Bazaar Buddies</h1>
+                <p>Your Friends, Your Shopping, Your Bazaar</p>
             </Col>
             <Col className="user-options col-auto">
             {/*first link */}
             <ul className="user-buttons">
                 <li>
                     <Link to="/login" className="header-link">
-                        <Button>
+                        <Button variant="warning">
                         <div className = "header-option">
                             <span className ="header-text">Login</span>
                         </div>
@@ -38,8 +35,8 @@ function Header (){
                     </Link>
                 </li>
                 <li>
-                    <Link to="/register" className="header-link">
-                    <Button>
+                    <Link to="/signup" className="header-link">
+                    <Button variant="warning">
                         <div className = "header-option">
                             <span className ="header-text"> Sign Up</span>
                         </div>
@@ -49,7 +46,7 @@ function Header (){
                 <li>
                       {/*second link */}
                     <Link to="/checkout" className="header-link">
-                    <Button>
+                    <Button variant="warning">
                          <div className = "header-option">
                             <MdShoppingBasket/>
                             {/*number of items in the basket */}

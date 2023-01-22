@@ -2,14 +2,13 @@
 import React from "react";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter, BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components import
 import Header from "./components/Header/Header.js";
 import Footer from "./components/Footer/Footer.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import SidebarData from "./components/Navbar/SidebarData.js"
-import Login from "./components/Login.js"
 import Register from "./components/Register.js"
 import CartList from "./components/CartList.js"
 import Checkout from "./components/Checkout.js"
@@ -18,7 +17,7 @@ import Checkout from "./components/Checkout.js"
 // import { AuthProvider } from './context/auth';
 // import AuthRoute from './utils/AuthRoute';
 // Pages import
-import Home from './pages/HomeGoods'
+import Home from './pages/Home.js'
 import Antiques from "./pages/Antiques.js";
 import Appliances from './pages/Appliances.js'
 import AutoParts from "./pages/Autoparts.js";
@@ -31,8 +30,12 @@ import HomeGoods from './pages/HomeGoods.js';
 import Jewelry from './pages/Jewelry.js'
 import Sporting from './pages/Sporting.js';
 import Tools from './pages/Tools.js'
-import Toys from './pages/Toys.js';
 import Motors from './pages/Motors.js'
+
+// Login/Server Side Pages
+import Login from "./pages/Login.js";
+import Signup from './pages/Signup.js'
+import UserPosts from './pages/UserPosts'
 
 
 
@@ -67,12 +70,10 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // const [pages] = useState(["item", "pay", "post"]);
-  // const [currentPage, setCurrentPage] = useState(pages[0]);
   return (
     <ApolloProvider client={client}>
     <div className="App">
-      <BrowserRouter>
+      <Router>
       <Header/>
       <Container fluid>
         <Row>
@@ -81,27 +82,27 @@ function App() {
           <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<Register/>} />
+          <Route path="/signup" element={<Signup/>} />
           <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/userproducts" element={<UserPosts/>} />
           <Route path = "/antiques" element = {<Antiques/>} />
           <Route path = "/appliances" element = {<Appliances/>} />
           <Route path = "/auto-parts" element = {<AutoParts/>} />
           <Route path = "/books" element = {<Books/>} />
           <Route path = "/clothes" element = {<Clothes/>} />
           <Route path = "/electronics" element = {<Electronics/>} />
-          <Route path = "/Furniture" element = {<Furniture/>} />
-          <Route path = "/General" element = {<General/>} />
+          <Route path = "/furniture" element = {<Furniture/>} />
+          <Route path = "/beyond" element = {<General/>} />
           <Route path = "/jewelry" element = {<Jewelry/>} />
-          <Route path = "/Sporting" element = {<Sporting/>} />
-          <Route path = "/Tools" element = {<Tools/>} />
-          <Route path = "/Toys" element = {<Toys/>} />
-          <Route path = "/Vehicles" element = {<Motors/>} />
-          <Route path = "/bedroom" element = {<HomeGoods/>} />
+          <Route path = "/sporting" element = {<Sporting/>} />
+          <Route path = "/tools" element = {<Tools/>} />
+          <Route path = "/motors" element = {<Motors/>} />
+          <Route path = "/homegoods" element = {<HomeGoods/>} />
           </Routes>
           </Col>
       </Row>
       </Container>
-      </BrowserRouter>
+      </Router>
       <Footer/>
     </div>
     </ApolloProvider>

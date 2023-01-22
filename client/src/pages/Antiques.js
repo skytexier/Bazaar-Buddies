@@ -17,18 +17,16 @@ const Antiques = (props) => {
   const [searchInput, setSearchInput] = useState('')
   const [preSearch, setPreSearch] = useState('')
   const [searchCat, setSearchCat] = useState('20081')
-  const [preCat, setPreCat] = useState('')
   const itemArr = []
 
   const fetchData = async () => {
     try {
       const response = await fetch(`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=SkyTexie-ReactECo-PRD-f9f3fcb9f-9fbc87f9&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&paginationInput.entriesPerPage=25&keywords=${searchInput}&categoryId=${searchCat}&`, {
-        'Content-Type' : 'application/json'
+        'Content-Type' : 'application/json',
+        'Access-Control-Allow-Origin': 'null'
       })
       const newData = await response.json();
       const itemsList = newData.findItemsAdvancedResponse[0].searchResult[0].item
-      console.log(newData)
-      console.log(itemsList)
       setItems(itemsList)
     } catch (error) {
       console.log(error)
@@ -53,7 +51,13 @@ const Antiques = (props) => {
     setSearchCat(value)
   }
 
-  if (items.length > 0) {
+  if (items === undefined) {
+    var obj = {};
+    obj['name'] = "No item found";
+    obj['price'] = "???"
+    obj['category'] = "Item Not found"
+    itemArr.push(obj)
+  } else {
     for (var i=0; i < items.length; i++){
       var obj = {};
       obj['name'] = items[i].title[0];
@@ -66,13 +70,7 @@ const Antiques = (props) => {
       obj['image'] = newString;
       obj['link'] = items[i].viewItemURL[0]
       itemArr.push(obj)
-  }} else {
-    var obj = {};
-    obj['name'] = "No item found";
-    obj['price'] = "???"
-    obj['category'] = "Item Not found"
-    itemArr.push(obj)
-  }
+  }}
     return (
       <Col className='product_box' lg={12}>
         <section className="products" id="products">
@@ -91,8 +89,9 @@ const Antiques = (props) => {
                 </Button>
                 </Form.Group>
           </Form>
-          <h4>Sub Categories</h4>
-          <div className='subcategory-search'>
+          <Container className='subcategories'>
+          <h4>Major Categories</h4>
+          <Col className='categoryButtons d-flex'>
           <Button className='subcategory' type='button' variant='secondary' size='md' onClick={() => handleCategoryChange('4707')}>
             <p>Architectural & Garden</p>
           </Button>
@@ -117,8 +116,8 @@ const Antiques = (props) => {
           <Button className='subcategory' type='button' variant='secondary' size='md' onClick={() => handleCategoryChange('20096')}>
             <p>Silver</p>
           </Button>
-          </div>
-
+          </Col>
+          </Container>
       <Row className="product_grid">
         {itemArr.map((item, index) => {
           return <ProductCard

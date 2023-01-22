@@ -21,7 +21,11 @@ const userSchema = new Schema(
             allowNull:false,
             required: true,
         },
-        // userProducts: [productSchema],
+        posts: {
+            type: Schema.Types.ObjectId,
+            ref: 'Products',
+            required: true
+        },
 },
 {
     toJSON: {

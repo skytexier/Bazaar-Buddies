@@ -32,22 +32,21 @@ type RegisterInput {
 
 type Query {
     categories: [Category]
-    products(category: ID, name: String): [Product]
-    product(_id: ID!): Product
-}
-
-type Auth {
-    token: ID!
-    user: User
-}
-
-type Query {
+    products: [Product]
+    product(_id: ID): [Product]
     me: User
 }
 
+type Auth {
+    token: ID
+    user: User
+}
+
+
 type Mutation {
-    register(registerInput: RegisterInput): User!
-    login(username: String!, password: String!): User!
+    login(email: String!, password: String!): Auth
+    addUser(name: String!, email: String!, password: String!): Auth
+    updateUser(name: String, email: String, password: String): User
 }
 `;
 
