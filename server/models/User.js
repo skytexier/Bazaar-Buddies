@@ -5,7 +5,7 @@ const productSchema = require('./Product')
 
 const userSchema = new Schema(
     {
-        username: {
+        name: {
             type: String,
             required: true,
             trim: true,
@@ -51,7 +51,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 
 
 
-const User = mongoose.model('User', userSchema)
+const User = model('User', userSchema)
 
 module.exports = User;
 

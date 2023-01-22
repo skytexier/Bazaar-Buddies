@@ -1,6 +1,6 @@
-const { connection, connect } = require('mongoose');
+const mongoose = require('mongoose');
 
-connect(
+mongoose.connect(
     process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/Cyber_Store', 
     {
         useNewUrlParser: true,
@@ -10,9 +10,6 @@ connect(
 );
 
 
-module.exports = {
-    connection, 
-    SECRET_KEY: "secretkey",
-}
+module.exports = mongoose.connection;
 
 // MN
