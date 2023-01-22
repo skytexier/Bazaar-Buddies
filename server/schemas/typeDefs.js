@@ -17,7 +17,7 @@ type Product {
 
 type User {
     _id: ID
-    name: String!
+    username: String!
     email: String!
 }
 
