@@ -8,28 +8,26 @@ const db = require('./config/connection');
 // const routes = require("./controllers");
 const PORT = process.env.PORT || 3001;
 const app = express();
-
 const server = new ApolloServer({
     typeDefs,
     resolvers,
     context: authMiddleware,
 });
 
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
-    const publicPath = path.join(__dirname, '../client/build/static/');
+    const publicPath = path.join(__dirname, '../client/build');
     app.use(express.static(publicPath));
     app.use('*', express.static(publicPath));
   }
 
-
-
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build/", "index.html"));
-  });
+  const root = require('path').join(__dirname, '../client/build')
+  app.use(express.static(root));
+  app.get("*", (req, res) => {
+      res.sendFile('index.html', { root });
+  })
 
 // Creating a new instance of an Apollo server 
 const startApolloServer = async (typeDefs, resolvers) => { 

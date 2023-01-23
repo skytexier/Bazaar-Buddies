@@ -3,6 +3,8 @@ import React from "react";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from './utils/store';
 
 // Components import
 import Header from "./components/Header/Header.js";
@@ -35,7 +37,7 @@ import Motors from './pages/Motors.js'
 // Login/Server Side Pages
 import Login from "./pages/Login.js";
 import Signup from './pages/Signup.js'
-import UserPosts from './pages/UserPosts'
+import UserPosts from './pages/UserPosts.js'
 
 
 
@@ -73,6 +75,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <div className="App">
+    <Provider store={store}>
       <Router>
       <Header/>
       <Container fluid>
@@ -103,6 +106,7 @@ function App() {
       </Row>
       </Container>
       </Router>
+      </Provider>
       <Footer/>
     </div>
     </ApolloProvider>
