@@ -16,7 +16,7 @@
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   letter-spacing: 0.2rem;
   border-radius: 100px;
-  color: rgb(0, 0, 0);
+  color: white;
   font-weight: 100;
   display: flex;
   flex-direction: column;
@@ -25,6 +25,8 @@
   align-items: center;
   background-color: rgb(250, 169, 63);
 }
+
+
 
 .header__Search {
   display: flex;

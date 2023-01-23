@@ -3,12 +3,14 @@ const bcrypt = require('bcrypt');
 const { Schema, model } = require('mongoose');
 const productSchema = require('./Product')
 
+// creating user schema
 const userSchema = new Schema(
     {
         name: {
             type: String,
             required: true,
             trim: true,
+            allowNull: false,
         },
         email: {
             type: String,
@@ -44,6 +46,7 @@ userSchema.pre('save', async function (next) {
     next();
 });
 
+// check if user password match
 userSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compareSync(password, this.password);
 };
