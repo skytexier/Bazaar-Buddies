@@ -70,7 +70,7 @@ function Header() {
               </li>
               <li>
                 {/* router to make a post */}
-                <Link to="/userproducts" className="header-link">
+                <Link to="/post" className="header-link">
                   <Button variant="warning">
                     <div className="header-option">
                       <span className="header-text">Make a post</span>
