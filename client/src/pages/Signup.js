@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+import { Form, Button, Alert, Col, Row } from "react-bootstrap";
 
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
-const Signup = () => {
-  const [addUser, { error }] = useMutation(ADD_USER)
+const Signup = (props) => {
+  const [addUser, error] = useMutation(ADD_USER)
 
   const [userFormData, setUserFormData] = useState({
-    username: "",
+    name: "",
     email: "",
     password: "",
   });
@@ -25,36 +25,50 @@ const Signup = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     const form = event.currentTarget;
+    const mutationRes = await addUser({
+      variables: {
+        name: userFormData.name,
+        email: userFormData.email,
+        password: userFormData.password
+      },
+    });
+    const token = mutationRes.data.addUser.token;
+    console.log(token)
+    Auth.login(token)
+
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     }
 
-    try {
+    // try {
       
-      const {data} = await addUser({variables:{
-        ...userFormData
-      }})
+    //   const {data} = await addUser({variables:{
+    //     ...userFormData
+    //   }})
 
-      Auth.login(data.addUser.token);
+    //   Auth.login(data.addUser.token);
 
-    } catch (err) {
-      console.error(err);
-      setShowAlert(true);
-    }
+    // } catch (err) {
+    //   console.error(err);
+    //   setShowAlert(true);
+    // }
 
-    setUserFormData({
-      username: "",
-      email: "",
-      password: "",
-    });
-
+    // setUserFormData({
+    //   username: "",
+    //   email: "",
+    //   password: "",
+    // });
+    console.log(error)
+    console.log(userFormData)
   };
 
   return (
     <>
+    <Row>
+    <Col className="d-flex flex-column align-items-center p-3">
+      <h4>Signup!</h4>
       {/* This is needed for the validation functionality above */}
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
@@ -68,13 +82,13 @@ const Signup = () => {
         </Alert>
 
         <Form.Group>
-          <Form.Label htmlFor="username">Username</Form.Label>
+          <Form.Label htmlFor="name">Username</Form.Label>
           <Form.Control
             type="text"
             placeholder="Your username"
-            name="username"
+            name="name"
             onChange={handleInputChange}
-            value={userFormData.username}
+            value={userFormData.name}
             required
           />
           <Form.Control.Feedback type="invalid">
@@ -114,7 +128,7 @@ const Signup = () => {
         <Button
           disabled={
             !(
-              userFormData.username &&
+              userFormData.name &&
               userFormData.email &&
               userFormData.password
             )
@@ -125,6 +139,8 @@ const Signup = () => {
           Submit
         </Button>
       </Form>
+      </Col>
+      </Row>
     </>
   );
 };

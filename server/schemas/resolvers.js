@@ -1,6 +1,6 @@
 const { User, Product, Category } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
-const { signToken } = require('../utils/auth.js')
+const { signToken } = require('../utils/auth')
 
 const resolvers = {
     Query: {
@@ -16,8 +16,13 @@ const resolvers = {
             return await Category.find()
         },
 
-        products: async (parent, args, context, info) => {
-            return await Product.find()
+        products: async (parent, {category}, context, info) => {
+            const params = {};
+
+            if (category) {
+                params.category = category;
+            }
+            return await Product.find().populate('category')
         },
 
         product: async (parent, args, context, info) => {
@@ -27,11 +32,12 @@ const resolvers = {
     },
 
     Mutation: {
-        addUser: async (parent, args, context, info) => {
-            const user = await User.create(args);
-            const token = signToken(user);
-
-            return { token, user };
+        addUser: async (parent, {name, email, password}, context, info) => {
+            const newuser = await User.create({name, email, password});
+            return newuser.save().then(user => {
+                const token = signToken(user);
+                return { token, user: {_id: user.id, name: user.name} };
+            })
         },
 
         updateUser: async (parent, args, context, info) => {

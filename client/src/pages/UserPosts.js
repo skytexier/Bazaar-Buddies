@@ -5,7 +5,6 @@ import { ProductCard } from '../components/ProductCard.js';
 import { useQuery, qgl } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import {useDispatch, useSelector} from 'react-redux';
-import { GET_PRODUCTS } from '../utils/actions.js';
 
 const  UserPosts = (props ) => {
     const dispatch = useDispatch();
