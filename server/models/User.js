@@ -24,7 +24,7 @@ const userSchema = new Schema(
         posts: {
             type: Schema.Types.ObjectId,
             ref: 'Products',
-            required: true
+            required: false,
         },
 },
 {
