@@ -11,7 +11,6 @@ import Header from "./components/Header/Header.js";
 import Footer from "./components/Footer/Footer.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import SidebarData from "./components/Navbar/SidebarData.js"
-import Register from "./components/Register.js"
 import CartList from "./components/CartList.js"
 import Checkout from "./components/Checkout.js"
 

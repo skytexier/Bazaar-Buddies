@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import {Container, Row, Col, Form, Button} from 'react-bootstrap';
 import { ProductCard } from '../components/ProductCard.js';
-import { useQuery, qgl } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import {useDispatch, useSelector} from 'react-redux';
 

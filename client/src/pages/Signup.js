@@ -13,6 +13,7 @@ const Signup = (props) => {
     name: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const [validated] = useState(false);
@@ -30,7 +31,8 @@ const Signup = (props) => {
       variables: {
         name: userFormData.name,
         email: userFormData.email,
-        password: userFormData.password
+        password: userFormData.password,
+        confirmPassword: userFormData.confirmPassword,
       },
     });
     const token = mutationRes.data.addUser.token;
@@ -125,12 +127,27 @@ const Signup = (props) => {
             Password is required!
           </Form.Control.Feedback>
         </Form.Group>
+        <Form.Group>
+          <Form.Label htmlFor="password">Confirm Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Confirm password"
+            name="confirmPassword"
+            onChange={handleInputChange}
+            value={userFormData.confirmPassword}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Confirm your password!
+          </Form.Control.Feedback>
+        </Form.Group>
         <Button
           disabled={
             !(
               userFormData.name &&
               userFormData.email &&
-              userFormData.password
+              userFormData.password &&
+              userFormData.confirmPassword
             )
           }
           type="submit"

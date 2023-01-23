@@ -30,7 +30,7 @@ type Query {
 }
 
 type Auth {
-    token: ID
+    token: String!
     user: User
 }
 

@@ -9,7 +9,7 @@ const resolvers = {
                 const userData = await User.findOne({ _id: context.user._id}).select('-__v -password');
                 return userData;
             }
-            throw new AuthenticationError('You are logged in!');
+            throw new AuthenticationError('You are not logged in!');
         },
 
         categories: async (parent, args, context, info) => {
@@ -53,7 +53,7 @@ const resolvers = {
             if (!user) {
                 throw new AuthenticationError('Wrong email!');
             }
-            else{
+            else {
                 const correctPass = await user.isCorrectPassword(args.password);
 
                 if (!correctPass) {
@@ -64,10 +64,10 @@ const resolvers = {
                     return { token, user};
                 }
             }
-        }
-    }
+        },
+    },
 
-    }
+}
 
 module.exports = resolvers;
 

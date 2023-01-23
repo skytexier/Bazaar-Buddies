@@ -10,3 +10,12 @@ export const QUERY_PRODUCTS = gql`
     }
   }
 `;
+
+export const GET_USER = gql`
+{
+  me {
+    email
+    name
+  }
+}
+`;
