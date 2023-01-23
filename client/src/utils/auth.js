@@ -25,17 +25,17 @@ class Authorizer {
             return false;
         }
     }
-
+    //get token
     getToken(){
         return localStorage.getItem('id_token');
     }
-
+    //log in with token and go back to home
     login(idToken){
 
         localStorage.setItem('id_token', idToken);
         window.location.assign('/')
     }
-
+    //log out user and go back to home
     logout(){
         localStorage.removeItem('id_token');
         window.location.assign('/')

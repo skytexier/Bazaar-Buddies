@@ -7,12 +7,13 @@ type Category {
 }
 
 type Product {
-    _id: ID
-    name: String
+    _id: ID!
+    name: String!
     description: String
     image: String
-    price: Float
-    category: Category
+    price: String!
+    category: Category!
+    user: User
 }
 
 type User {
@@ -34,11 +35,24 @@ type Auth {
     user: User
 }
 
+input CreateProductInput {
+    name: String!
+    description: String
+    image: String
+    price: String!
+    category: ID!
+    user: ID
+  }
+
 
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(name: String!, email: String!, password: String!): Auth
     updateUser(name: String, email: String, password: String): User
+    deleteUser(id: ID!): Boolean
+    createProduct(input: CreateProductInput): Product
+    updateProduct(_id: ID!, name: String, description: String, image: String, price: String!, category: String): Product
+    deleteProduct(_id: ID!): Boolean
 }
 `;
 

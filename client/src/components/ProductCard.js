@@ -2,7 +2,7 @@
 import Col from 'react-bootstrap/Col';
 // import Hr from 'react-native-hr-component'
 
-
+//creates a product card to display on page with product information
 export const ProductCard = ({ name, price, category, image, link}) => {
     return (
         <Col className='product_card col-auto'>
