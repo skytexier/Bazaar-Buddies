@@ -28,6 +28,7 @@ type Query {
     products: [Product]
     product(_id: ID): [Product]
     me: User
+    getProductByUser(userId: ID!): [Product]
 }
 
 type Auth {

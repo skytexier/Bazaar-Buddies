@@ -23,14 +23,6 @@ const  BazaarPosts = (props ) => {
           }
         })
         console.log(newData)
-      
-
-
-
-
-
-
-
     return (
         <Col className='product_box' lg={12}>
           <section className="products" id="products">
@@ -48,4 +40,4 @@ const  BazaarPosts = (props ) => {
       );
 }
 
-export default UserPosts;
+export default BazaarPosts;

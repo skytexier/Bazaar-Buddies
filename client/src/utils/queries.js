@@ -15,6 +15,25 @@ export const QUERY_PRODUCTS = gql`
   }
 `;
 
+export const GET_PRODUCT_BY_USER = gql`
+  query getProductByUser($userId: ID!) {
+    getProductByUser(userId: $userId) {
+      _id
+      name
+      description
+      image
+      price
+      category {
+        _id
+        name
+      }
+      user {
+        _id
+      }
+    }
+  }
+`;
+
 export const QUERY_CATEGORIES = gql`
 {
     categories {

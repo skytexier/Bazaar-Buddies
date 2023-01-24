@@ -27,9 +27,9 @@ const resolvers = {
             return await Product.find().populate('category')
         },
 
-        product: async (parent, args, context, info) => {
-            const { _id } = args;
-            return await Product.findById(_id);
+        getProductByUser: async (_, { userId }) => {
+            const product = await Product.find({ user: userId });
+            return product;
         },
     },
 
@@ -97,6 +97,7 @@ const resolvers = {
                     category: mongoose.Types.ObjectId(input.category),
                     user: mongoose.Types.ObjectId(user._id)
                 });
+                await User.findByIdAndUpdate(user._id, { $push: { posts: newProduct._id}}, {new: true});
                 return newProduct;
             } catch (error) {
                 throw new Error(error);
