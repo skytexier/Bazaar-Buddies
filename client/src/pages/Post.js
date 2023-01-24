@@ -20,7 +20,6 @@ const Post = () => {
     productData ? console.log(productData) : console.log('no data found')
     const newData = productData ? Object.values(productData) : console.log('no product data');
     const userProducts = productData ? productData.getProductByUser.map(({ category, description, image, name, price}) => {
-      console.log(newData)
       return {
         category: category._id,
         description,
@@ -29,7 +28,6 @@ const Post = () => {
         price,
       }
     }) : console.log('cannot map user product data')
-    console.log(userProducts)
 
 
     const [createProduct, error] = useMutation(CREATE_PRODUCT);
@@ -45,18 +43,15 @@ const Post = () => {
             name: ""
         }
     });
-    console.log(productFormData)
     const [validated] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setproductFormData({ ...productFormData, [event.target.name]: event.target.value });
-        console.log(productFormData)
     };
     
     const handleFormSubmit = async (event) => {
-        event.preventDefault();
         const form = event.currentTarget;
         const mutationRes = await createProduct({
           variables: {
@@ -77,7 +72,6 @@ const Post = () => {
           event.stopPropagation();
         }
       };
-
 
     if (Auth.loggedIn()) {
     return (

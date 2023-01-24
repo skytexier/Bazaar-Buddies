@@ -52,6 +52,7 @@ const Signup = (props) => {
   return (
     <>
     <Row>
+    <section className="products">
     <Col className="d-flex flex-column align-items-center p-3">
       <h4>Signup!</h4>
       {/* This is needed for the validation functionality above */}
@@ -148,6 +149,7 @@ const Signup = (props) => {
         </Button>
       </Form>
       </Col>
+      </section>
       </Row>
     </>
   );
