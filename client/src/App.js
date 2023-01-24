@@ -11,7 +11,6 @@ import Header from "./components/Header/Header.js";
 import Footer from "./components/Footer/Footer.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import SidebarData from "./components/Navbar/SidebarData.js"
-import Register from "./components/Register.js"
 import CartList from "./components/CartList.js"
 import Checkout from "./components/Checkout.js"
 
@@ -36,8 +35,10 @@ import Motors from './pages/Motors.js'
 
 // Login/Server Side Pages
 import Login from "./pages/Login.js";
-import Signup from './pages/Signup.js'
-import UserPosts from './pages/UserPosts.js'
+import Signup from './pages/Signup.js';
+import BazaarPosts from './pages/BazaarPosts.js';
+import User from './pages/User.js';
+import Post from './pages/Post.js'
 
 
 
@@ -68,7 +69,9 @@ const client = new ApolloClient({
   // setting up our client to use auth middleware before our GraphQL API calls
   // data aint free in this economy
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    addTypename: false
+  }),
 });
 
 function App() {
@@ -87,7 +90,9 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/checkout" element={<Checkout/>} />
-          <Route path="/userproducts" element={<UserPosts/>} />
+          <Route path="/user" element={<User/>} />
+          <Route path="/post" element={<Post/>} />
+          <Route path="/bazaarPosts" element={<BazaarPosts/>} />
           <Route path = "/antiques" element = {<Antiques/>} />
           <Route path = "/appliances" element = {<Appliances/>} />
           <Route path = "/auto-parts" element = {<AutoParts/>} />

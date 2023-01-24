@@ -1,5 +1,6 @@
 import React from "react";
 
+//creates the logo footer using react
 export default function Footer(){
     return(
         <section id="footer" className="footer">
@@ -10,4 +11,4 @@ export default function Footer(){
             </div>
         </section>
     )
-}//working on it (JL) feel free to add on
+}

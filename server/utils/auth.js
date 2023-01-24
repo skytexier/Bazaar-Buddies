@@ -4,9 +4,9 @@ const jwt = require('jsonwebtoken');
 const secret = 'pineapplepizzaisgood';
 const expiration = '1h';
 
-module.exports - {
+module.exports = {
     // Middleware authenticated routes 
-    authMiddleware: function (req, res, next){
+    authMiddleware: function ({ req }){
         // allow token to be sent thru query or header
         let token = req.body.token || req.query.token || req.headers.authorization;
 
@@ -14,10 +14,8 @@ module.exports - {
             token = token.split(' ').pop().trim();
         }
 
-        console.log('token', token)
-
         if (!token) {
-            return res.status(400).json({message: 'Yo you need a token bro, sign up'})
+            return req;
         }
 
         // verify token and get user data from it
@@ -34,6 +32,7 @@ module.exports - {
 
     signToken: function ({ name, email, _id}){
         const payload = {name, email, _id};
-        return jwt.sign({data: payload}, secret, {expiresIn: expiration})
-    },
+        return jwt.sign({data: payload}, secret, {expiresIn: expiration}
+            );
+    }
 };
